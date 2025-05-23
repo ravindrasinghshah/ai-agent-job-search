@@ -82,8 +82,7 @@ async function searchLinkedIn(keyword: string): Promise<JobListing[]> {
       data,
       {
         headers: {
-          Authorization:
-            "Bearer e2b6107626e508c208d6c0bd11bdc22ac893b52a3a0f257d1ba0baf9882626e9",
+          Authorization: `Bearer ${process.env.BRIGHT_DATA_API_TOKEN}`,
           "Content-Type": "application/json",
         },
       }
@@ -97,8 +96,7 @@ async function searchLinkedIn(keyword: string): Promise<JobListing[]> {
       `https://api.brightdata.com/datasets/v3/snapshot/${response.data.snapshot_id}?format=json`,
       {
         headers: {
-          Authorization:
-            "Bearer e2b6107626e508c208d6c0bd11bdc22ac893b52a3a0f257d1ba0baf9882626e9",
+          Authorization: `Bearer ${process.env.BRIGHT_DATA_API_TOKEN}`,
         },
       }
     );
